@@ -9,7 +9,7 @@ def main():
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-    BACKGROUND = pygame.image.load("board.png")
+    BACKGROUND = pygame.image.load("images/board.png")
     
     PLAYERS = ["X", "O"]
 
@@ -19,11 +19,11 @@ def main():
     FONT = pygame.font.Font(None, 200)
 
     pygame.display.set_caption("Tic Tac Toe")
-    pygame.mixer.music.load("music.mp3")
+    pygame.mixer.music.load("audio/music.mp3")
     pygame.mixer.music.set_volume(0.25)
     pygame.mixer.music.play(loops=-1)
 
-    click = pygame.mixer.Sound("click.wav")
+    click = pygame.mixer.Sound("audio/click.wav")
 
     running = True
 
@@ -76,8 +76,18 @@ def main():
                             screen.fill("black")
                             draw_text("Tie!")
                             pygame.mixer_music.fadeout(100)
+                    
+                    player = switch(player)
 
-                        player = switch(player)
+            keys = pygame.key.get_pressed()
+
+            # reset the game if game_over condition is met
+            if keys[pygame.K_SPACE] and game_over:
+                game_over = False
+                board = logic.gen_board()
+                player = "X"
+                screen.blit(BACKGROUND, (0,0))
+                pygame.mixer.music.play(loops=-1)           
 
 if __name__ == "__main__":
     main()
