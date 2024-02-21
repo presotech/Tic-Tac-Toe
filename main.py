@@ -9,7 +9,7 @@ def main():
 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-    BACKGROUND = pygame.image.load("images/board.png")
+    BACKGROUND = pygame.image.load("board.png")
     
     PLAYERS = ["X", "O"]
 
@@ -19,11 +19,11 @@ def main():
     FONT = pygame.font.Font(None, 200)
 
     pygame.display.set_caption("Tic Tac Toe")
-    pygame.mixer.music.load("audio/music.mp3")
+    pygame.mixer.music.load("music.mp3")
     pygame.mixer.music.set_volume(0.25)
     pygame.mixer.music.play(loops=-1)
 
-    click = pygame.mixer.Sound("audio/click.wav")
+    click = pygame.mixer.Sound("click.wav")
 
     running = True
 
