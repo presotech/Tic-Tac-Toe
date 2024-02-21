@@ -61,7 +61,7 @@ def check_board(board, players):
             if check(player, col):
                 return player
 
-    # check if its a draw, assuming we found now lines above indicating a player won    
+    # check if its a draw, assuming we found no lines above indicating a player won    
     return has_empty_box
 
 def move(pos, player, board):
