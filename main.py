@@ -77,7 +77,7 @@ def main():
                             draw_text("Tie!")
                             pygame.mixer_music.fadeout(100)
                     
-                    player = switch(player)
+                        player = switch(player)
 
             keys = pygame.key.get_pressed()
 
