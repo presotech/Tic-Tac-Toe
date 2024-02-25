@@ -69,13 +69,11 @@ def main():
                             game_over = True
                             screen.fill("black")
                             draw_text(f"Winner: {state}")
-                            pygame.mixer_music.fadeout(100)
                         
                         elif not state:
                             game_over = True
                             screen.fill("black")
                             draw_text("Tie!")
-                            pygame.mixer_music.fadeout(100)
                     
                         player = switch(player)
 
@@ -87,7 +85,6 @@ def main():
                 board = logic.gen_board()
                 player = "X"
                 screen.blit(BACKGROUND, (0,0))
-                pygame.mixer.music.play(loops=-1)           
 
 if __name__ == "__main__":
     main()
